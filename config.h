@@ -76,12 +76,11 @@ static const char *mute_vol[] = {"pactl", "set-sink-mute", "@DEFAULT_SINK@",
                                  "toggle", NULL};
 static const char *brighter[] = {"brightnessctl", "set", "10%+", NULL};
 static const char *dimmer[] = {"brightnessctl", "set", "10%-", NULL};
-static const char *screenshot_full[] = {
-    "scrot", "/home/uniwill/Pictures/Screenshot/%d-%m-%Y_%H-%M-%S_full.png",
-    NULL};
-static const char *screenshot_sel[] = {
-    "scrot", "--select",
-    "/home/uniwill/Pictures/Screenshot/%d-%m-%Y_%H-%M-%S_sel.png", NULL};
+static const char *screenshot_full[] = {"sh", "-c", "~/dots/scripts/scrot.sh",
+                                        NULL};
+
+static const char *screenshot_sel[] = {"sh", "-c",
+                                       "~/dots/scripts/scrot.sh select", NULL};
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
